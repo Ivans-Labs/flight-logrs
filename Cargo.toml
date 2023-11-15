@@ -2,11 +2,56 @@
 name = "flight-logrs"
 version = "0.1.0"
 edition = "2021"
-
+authors = ["Sudo-Ivan"]
+license = "MIT"
+description = "Logbook TUI App"
+repository = "https://github.com/Ivans-Labs/flight-logrs"
+readme = "README.md"
+categories = ["command-line-utilities"]
+keywords = ["tui", "terminal-app", "journal", "cli", "ui"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-crossterm = "0.26.1"
-serde = "1.0.164"
-serde_json = "1.0.96"
-tui = "0.19.0"
+anyhow = "1.0.75"
+tokio = { version = "1.34.0", features = ["full"] }
+serde = { version = "1.0.192", features = ["derive"]}
+serde_json = "1.0.108"
+log = "0.4.20"
+chrono = { version = "0.4.31", features = ["serde"] }
+async-trait = "0.1.74"
+clap = { version = "4.4.8", features = ["derive"] }
+crossterm = {version =  "0.27.0", features = ["event-stream"]}
+directories = "5.0.0"
+simplelog = "0.12.1"
+textwrap = "0.16.0"
+thiserror = "1.0.50"
+toml = "0.8.8"
+sqlx = {version = "0.7.2", features = ["runtime-tokio-native-tls", "sqlite", "chrono"], optional = true}
+futures-util = { version = "0.3", default-features = false }
+
+scopeguard = "1.2.0"
+git2 = { version = "0.18.1", default-features = false }
+rayon = "1.8.0"
+fuzzy-matcher = "0.3.7"
+path-absolutize = "3.1.1"
+tui-textarea = "0.3.1"
+ratatui = { version = "0.24.0", features = ["all-widgets"]}
+
+reqwest = "0.11.22"
+
+[features]
+default = ["json", "sqlite"]
+json =[]
+sqlite = ["dep:sqlx"]
+
+[[bin]]
+name = "tjournal"
+path = "src/main.rs"
+
+[lib]
+name = "backend"
+path = "backend/src/lib.rs"
+
+[[test]]
+name = "backend"
+path = "backend/tests/backend.rs"

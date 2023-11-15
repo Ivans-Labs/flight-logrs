@@ -45,7 +45,7 @@ json =[]
 sqlite = ["dep:sqlx"]
 
 [[bin]]
-name = "tjournal"
+name = "flight-logrs"
 path = "src/main.rs"
 
 [lib]

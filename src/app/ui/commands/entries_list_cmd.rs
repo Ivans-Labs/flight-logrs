@@ -188,7 +188,7 @@ pub fn exec_delete_current_entry<D: DataProvider>(
     app: &App<D>,
 ) -> CmdResult {
     if app.current_entry_id.is_some() {
-        let msg = MsgBoxType::Question("Do you want to remove the current journal?".into());
+        let msg = MsgBoxType::Question("Do you want to remove the current logbook?".into());
         let msg_actions = MsgBoxActions::YesNo;
         ui_components.show_msg_box(msg, msg_actions, Some(UICommand::DeleteCurrentEntry));
     }
@@ -286,7 +286,7 @@ pub async fn edit_in_external_editor<'a, D: DataProvider>(
     use tokio::fs;
 
     if let Some(entry) = app.get_current_entry_mut() {
-        const FILE_NAME: &str = "tui_journal.txt";
+        const FILE_NAME: &str = "tui_logbook.txt";
 
         let file_path = env::temp_dir().join(FILE_NAME);
 

@@ -132,7 +132,7 @@ where
 
         let entry = self
             .get_current_entry_mut()
-            .context("journal entry should exist")?;
+            .context("logbook entry should exist")?;
 
         entry.title = title;
         entry.date = date;

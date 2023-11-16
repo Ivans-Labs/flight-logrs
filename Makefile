@@ -15,21 +15,21 @@ build-release:
 	cargo build --release
 
 release-mac: build-release
-	strip target/release/tjournal
-	otool -L target/release/tjournal
+	strip target/release/tlogbook
+	otool -L target/release/tlogbook
 	mkdir -p release
-	tar -C ./target/release/ -czvf ./release/tjournal-mac.tar.gz ./tjournal
-	ls -lisah ./release/tjournal-mac.tar.gz
+	tar -C ./target/release/ -czvf ./release/tlogbook-mac.tar.gz ./tlogbook
+	ls -lisah ./release/tlogbook-mac.tar.gz
 
 release-win: build-release
 	mkdir -p release
-	7z -y a ./release/tjournal-win.zip ./target/release/tjournal.exe
+	7z -y a ./release/tlogbook-win.zip ./target/release/tlogbook.exe
 
 release-linux: 
 	cargo build --release --target=x86_64-unknown-linux-gnu
-	strip target/x86_64-unknown-linux-gnu/release/tjournal
+	strip target/x86_64-unknown-linux-gnu/release/tlogbook
 	mkdir -p release
-	tar -C ./target/x86_64-unknown-linux-gnu/release/ -czvf ./release/tjournal-linux-gnu.tar.gz ./tjournal
+	tar -C ./target/x86_64-unknown-linux-gnu/release/ -czvf ./release/tlogbook-linux-gnu.tar.gz ./tlogbook
 
 install:
 	cargo install --path "." 

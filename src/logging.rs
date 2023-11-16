@@ -42,8 +42,8 @@ pub fn get_default_path() -> anyhow::Result<PathBuf> {
         .map(|base_dir| {
             base_dir
                 .cache_dir()
-                .join("tui-journal")
-                .join("tui-journal.log")
+                .join("tui-logbook")
+                .join("tui-logbook.log")
         })
         .ok_or_else(|| anyhow!("Log file path couldn't be retrieved"))
 }

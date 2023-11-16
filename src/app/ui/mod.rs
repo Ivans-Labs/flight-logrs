@@ -294,13 +294,13 @@ impl<'a, 'b> UIComponents<'a> {
     ) {
         let (result, confirmation_msg) = if self.entries_list.multi_select_mode {
             let result = app.export_entries(path.clone()).await;
-            let msg = format!("Journal(s)  exported to file {}", path.display());
+            let msg = format!("Logbook(s)  exported to file {}", path.display());
 
             (result, msg)
         } else {
             let entry_id = entry_id.expect("entry id must have a value in normal mode");
             let result = app.export_entry_content(entry_id, path.clone()).await;
-            let msg = format!("Journal content exported to file {}", path.display());
+            let msg = format!("Logbook content exported to file {}", path.display());
 
             (result, msg)
         };
@@ -364,7 +364,7 @@ impl<'a, 'b> UIComponents<'a> {
     pub fn show_unsaved_msg_box(&mut self, pending_cmd: Option<UICommand>) {
         self.pending_command = pending_cmd;
         let msg =
-            MsgBoxType::Question("Do you want to save the changes on the current journal?".into());
+            MsgBoxType::Question("Do you want to save the changes on the current logbook?".into());
         let msg_actions = MsgBoxActions::YesNoCancel;
         let msg_box = MsgBox::new(msg, msg_actions);
 

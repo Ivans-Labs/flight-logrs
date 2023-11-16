@@ -127,9 +127,9 @@ impl<'a> EntryPopup<'a> {
         let block = Block::default()
             .borders(Borders::ALL)
             .title(if self.is_edit_entry {
-                "Edit journal"
+                "Edit logbook"
             } else {
-                "Create journal"
+                "Create logbook"
             });
 
         frame.render_widget(Clear, area);

@@ -119,7 +119,7 @@ fn get_settings_path() -> anyhow::Result<PathBuf> {
         .map(|base_dirs| {
             base_dirs
                 .config_dir()
-                .join("tui-journal")
+                .join("tui-logbook")
                 .join("config.toml")
         })
         .context("Config file path couldn't be retrieved")
@@ -131,7 +131,7 @@ fn get_default_data_dir() -> anyhow::Result<PathBuf> {
             user_dirs
                 .document_dir()
                 .unwrap_or(user_dirs.home_dir())
-                .join("tui-journal")
+                .join("tui-logbook")
         })
         .context("Default entries directory path couldn't be retrieved")
 }

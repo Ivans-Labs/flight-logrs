@@ -18,7 +18,7 @@ use super::{
 
 const FOOTER_TEXT: &str = "Enter: confirm | Esc or <Ctrl-c>: Cancel";
 const FOOTER_MARGINE: u16 = 8;
-const DEFAULT_FILE_NAME: &str = "flightlogrs_export.json";
+const DEFAULT_FILE_NAME: &str = "logbook_export.json";
 
 pub struct ExportPopup<'a> {
     path_txt: TextArea<'a>,

@@ -217,7 +217,7 @@ impl<'a> EntriesList {
             (true, true) => "Logbook - Multi-Select - Filtered",
             (true, false) => "Logbook - Multi-Select",
             (false, true) => "Logbook - Filtered",
-            (false, false) => "Flight Logbook",
+            (false, false) => "Logbook",
         };
 
         let border_style = match (self.is_active, self.multi_select_mode) {

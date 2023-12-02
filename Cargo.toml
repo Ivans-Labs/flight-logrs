@@ -1,11 +1,11 @@
 [package]
-name = "flight-logrs"
+name = "logbook"
 version = "0.1.0"
 edition = "2021"
 authors = ["Sudo-Ivan"]
 license = "MIT"
 description = "Logbook TUI App"
-repository = "https://github.com/Ivans-Labs/flight-logrs"
+repository = "https://github.com/Ivans-Labs/logbook"
 readme = "README.md"
 categories = ["command-line-utilities"]
 keywords = ["tui", "terminal-app", "logbook", "cli", "ui"]
@@ -45,7 +45,7 @@ json =[]
 sqlite = ["dep:sqlx"]
 
 [[bin]]
-name = "flight-logrs"
+name = "logbook"
 path = "src/main.rs"
 
 [lib]
